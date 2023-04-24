@@ -43,3 +43,20 @@ function removeBook(index) {
   books = books.filter((book, i) => i != index);
   localStorage.setItem("books", JSON.stringify(books));
 }
+
+// Event listener for the add book form submission
+addBookForm.addEventListener("submit", event => {
+  event.preventDefault();
+  const title = addBookForm.title.value;
+  const author = addBookForm.author.value;
+  addBook(title, author);
+  renderBookList();
+  addBookForm.reset();
+});
+
+// Render the book list on page load
+renderBookList();
+
+document.querySelector('form').addEventListener('submit', function() {
+  this.reset();
+});
