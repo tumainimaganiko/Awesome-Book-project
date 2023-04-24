@@ -1,32 +1,37 @@
 // Retrieve data from local storage
-let books = JSON.parse(localStorage.getItem("books")) || [];
+let books = JSON.parse(localStorage.getItem('books')) || [];
 
 // Get HTML elements
-const bookList = document.getElementById("book-list");
-const addBookForm = document.getElementById("add-book-form");
-const removeBookForm = document.getElementById("remove-book-form");
+const bookList = document.getElementById('book-list');
+const addBookForm = document.getElementById('add-book-form');
+
+// Function to remove a book from the collection
+function removeBook(index) {
+  books = books.filter((books, index) => index !== index);
+  localStorage.setItem('books', JSON.stringify(books));
+}
 
 // Function to render the book list
 function renderBookList() {
   // Clear the book list
-  bookList.innerHTML = "";
+  bookList.innerHTML = '';
   // Loop through the book array and create a new list item for each book
   books.forEach((book, index) => {
-    const li = document.createElement("p");
+    const li = document.createElement('p');
     li.innerHTML = `${book.title} <br> ${book.author} <br> `;
     bookList.appendChild(li);
     // Add the book index as a data attribute to the list item for later use
     li.dataset.index = index;
-    let p = document.createElement('hr');
-    
-    //add a remove button for each book
-    removeButton = document.createElement("button");
-    removeButton.innerHTML = "Remove";
+    const p = document.createElement('hr');
+
+    // add a remove button for each book
+    const removeButton = document.createElement('button');
+    removeButton.innerHTML = 'Remove';
     li.appendChild(removeButton);
-    removeButton.addEventListener("click" , event => {
-        const index = event.target.parentNode.dataset.index;
-        removeBook(index);
-        renderBookList();
+    removeButton.addEventListener('click', (event) => {
+      const { index } = event.target.parentNode.dataset;
+      removeBook(index);
+      renderBookList();
     });
     li.appendChild(p);
   });
@@ -34,18 +39,12 @@ function renderBookList() {
 
 // Function to add a new book to the collection
 function addBook(title, author) {
-  books.push({title: title, author: author});
-  localStorage.setItem("books", JSON.stringify(books));
-}
-
-// Function to remove a book from the collection
-function removeBook(index) {
-  books = books.filter((book, i) => i != index);
-  localStorage.setItem("books", JSON.stringify(books));
+  books.push({ title, author });
+  localStorage.setItem('books', JSON.stringify(books));
 }
 
 // Event listener for the add book form submission
-addBookForm.addEventListener("submit", event => {
+addBookForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const title = addBookForm.title.value;
   const author = addBookForm.author.value;
@@ -57,6 +56,6 @@ addBookForm.addEventListener("submit", event => {
 // Render the book list on page load
 renderBookList();
 
-document.querySelector('form').addEventListener('submit', function() {
+document.querySelector('form').addEventListener('submit', () => {
   this.reset();
 });
