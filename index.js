@@ -7,7 +7,7 @@ const addBookForm = document.getElementById('add-book-form');
 
 // Function to remove a book from the collection
 function removeBook(index) {
-  books = books.filter((books, i) => i === index);
+  books = books.filter((books, i) => i.toString() !== index);
   localStorage.setItem('books', JSON.stringify(books));
 }
 
