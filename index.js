@@ -17,8 +17,10 @@ class Book {
         const bookElement = document.createElement('div');
         bookElement.classList.add('book');
         bookElement.innerHTML = `
-          <span><strong>Title:</strong> ${book.title}</span>
-          <span><strong>Author:</strong> ${book.author}</span>
+          <div>
+          <span><strong>"${book.title}"</strong> by</span>
+          <span><strong>${book.author}</strong></span>
+          </div>
           <button class="delete">Remove</button>
         `;
         bookList.appendChild(bookElement);
