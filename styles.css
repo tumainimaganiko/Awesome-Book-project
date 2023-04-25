@@ -62,7 +62,7 @@ button[type="submit"] {
   border: 2px solid black;
 }
 
-.book:nth-child(even) {background-color: white;}
+.book:nth-child(even) { background-color: white; }
 
 .book {
   display: flex;
