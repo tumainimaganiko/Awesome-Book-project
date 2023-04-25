@@ -75,3 +75,16 @@ class Book {
     }
   }
   
+  // Event listeners
+  document.addEventListener('DOMContentLoaded', UI.displayBooks);
+  
+  const addBookForm = document.getElementById('addBookForm');
+  addBookForm.addEventListener('submit', e => {
+    e.preventDefault();
+    UI.addBook();
+  });
+  
+  const bookList = document.getElementById('bookList');
+  bookList.addEventListener('click', e => {
+    UI.removeBook(e.target);
+  });
