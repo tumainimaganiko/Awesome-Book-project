@@ -10,7 +10,7 @@ class Book {
 class UI {
   static displayBooks() {
     const books = Store.getBooks();
-    const bookList = document.getElementById('bookList');
+    const bookList = document.getElementById('book-list');
     bookList.innerHTML = '';
 
     books.forEach((book) => {
@@ -81,7 +81,7 @@ addBookForm.addEventListener('submit', (e) => {
   UI.addBook();
 });
 
-const bookList = document.getElementById('bookList');
+const bookList = document.getElementById('book-list');
 bookList.addEventListener('click', (e) => {
   UI.removeBook(e.target);
 });
