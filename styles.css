@@ -1,3 +1,56 @@
 body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.book {
+  padding: 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  flex-basis: calc(33.33% - 20px);
+}
+
+.book h3 {
   margin: 0;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.book p {
+  margin: 0;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.book button {
+  margin-top: 10px;
+  padding: 5px 10px;
+}
+
+form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="text"] {
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 200px;
+}
+
+button[type="submit"] {
+  padding: 5px 10px;
 }
