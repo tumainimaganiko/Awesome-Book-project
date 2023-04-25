@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Awesome Book</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Awesome Book Project</title>
 </head>
 <body>
-    <h1>Awesome Books</h1>
-    <div id="book-list"></div>
-    <form id="add-book-form">
-      <input type="text" id="title" name="title" placeholder="Title" required> <br> <br>
-      <input type="text" id="author" name="author" placeholder="Author" required> <br> <br>
-      <button type="submit">Add</button>
-    </form>
-    <script src="index.js"></script>
+  <h1>All Awesome Books</h1>
+  <div id="book-list">
+     <!-- Book list will be dynamically generated using JavaScript -->
+  </div>
+  <form id="addBookForm">
+    <h2>Add a new Book</h2>
+    <input type="text" id="titleInput" placeholder="Title" required />
+    <input type="text" id="authorInput" placeholder="Author" required />
+    <button type="submit">Add Book</button>
+  </form>
+  <script src="index.js"></script>
 </body>
 </html>
