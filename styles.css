@@ -4,6 +4,7 @@ body {
 
 h1 {
   text-align: center;
+  margin: 0;
 }
 
 .container {
@@ -62,6 +63,60 @@ button[type="submit"] {
 
 #book-list {
   border: 2px solid black;
+  display: none;
 }
 
 .book:nth-child(even) { background-color: white; }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+}
+
+header ul {
+  list-style-type: none;
+  display: flex;
+}
+
+header ul li a {
+  padding: 0 15px;
+  margin: 10px 0;
+  text-decoration: none;
+  color: black;
+}
+
+#addBookForm {
+  display: none;
+}
+
+h2 {
+  text-align: center;
+}
+
+#heading1 {
+  display: none;
+}
+
+.contact {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+#list {
+  border-right: 2px solid black;
+}
+
+#add {
+  border-right: 2px solid black;
+}
+
+footer {
+  border: 2px solid black;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 95%;
+  margin: 10px;
+}
