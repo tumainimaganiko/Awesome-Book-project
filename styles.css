@@ -63,6 +63,7 @@ button[type="submit"] {
 
 #book-list {
   border: 2px solid black;
+  display: none;
 }
 
 .book:nth-child(even) { background-color: white; }
@@ -85,13 +86,10 @@ header ul li a {
   color: black;
 }
 
-#book-list {
-  display: none;
-}
-
 #addBookForm {
   display: none;
 }
+
 h2 {
   text-align: center;
 }
@@ -118,7 +116,7 @@ footer {
   border: 2px solid black;
   padding: 10px;
   position: fixed;
-  bottom: 0px;
+  bottom: 0;
   width: 95%;
   margin: 10px;
 }
